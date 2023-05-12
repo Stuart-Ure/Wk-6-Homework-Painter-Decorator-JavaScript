@@ -3,12 +3,11 @@ const Decorator = require('../models/decorator.js');
 const PaintCan = require('../models/paintcan.js');
 const Room = require('../models/room.js');
 
-describe("Room", function () {
-    let room;
+describe('PaintCan', function () {
 
-    beforeEach(function () {
-        room = new Room(50);
-    });
+    let paint;
 
-
+    // beforeEach(function () {
+    //     paint = new PaintCan(25);
+    // });
 })

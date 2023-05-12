@@ -1,9 +1,7 @@
-const PaintCan = function (litres, colour){
+const PaintCan = function (litres){
     this.litres = litres
-    this.colour = colour
+    
 }
 
 
-
-
-module.exports = PaintCan
+module.exports = PaintCan;

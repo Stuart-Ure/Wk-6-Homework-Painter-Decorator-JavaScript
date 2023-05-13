@@ -13,4 +13,23 @@ describe("PaintCan", function () {
         paint2 = new PaintCan(0);
     });
 
+    it('should have a number of litres of paint', function(){
+        assert.strictEqual(25, paint.litres);
+    });
+
+    it('should be able to check if it is empty (not empty)', function () {
+        assert.strictEqual(false, paint.isEmpty());
+        console.log (`paint is ready to use!`)
+    });
+
+    it('should be able to check if it is empty (is empty)', function () {
+        assert.strictEqual(true, paint2.isEmpty());
+        console.log(`paint is empty`);
+    });
+
+    it('should be able to empty itself of paint', function () {
+        paint.empty();
+        assert.strictEqual(0, paint.litres);
+    });
+
 })

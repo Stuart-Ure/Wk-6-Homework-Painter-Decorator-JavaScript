@@ -53,7 +53,7 @@ describe("Decorator", function () {
     });
 
     it("should not be able to paint a room if it does not have enough paint", function () {
-        const room = new Room(50);
+        const room = new Room(100);
         const hasEnoughPaint = decorator.hasEnoughPaint(room);
         decorator.paintRoom(room);
         assert.strictEqual(room.painted, false);

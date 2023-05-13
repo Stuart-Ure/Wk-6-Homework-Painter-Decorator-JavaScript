@@ -33,12 +33,31 @@ describe("Decorator", function () {
     });
 
     it("should be able to calculate whether it has enough paint to paint a room", function () {
-        decorator.addPaint(paint); // Add paint cans to the decorator's stock
         decorator.addPaint(paint);
-        const room = new Room(50); // Create a room with an area of 50 square meters
+        decorator.addPaint(paint);
+        const room = new Room(50);
 
         const hasEnoughPaint = decorator.hasEnoughPaint(room);
-        assert.strictEqual(hasEnoughPaint, true); // Assert that the decorator has enough paint
+        assert.strictEqual(hasEnoughPaint, true);
+    });
+
+    it("should be able to calculate wether it has enough paint to paint a room(not enough)", function () {
+        assert.strictEqual(false, decorator.hasEnoughPaint(room));
+    });
+
+    it("should be able to paint a room if it has enough paint", function () {
+        decorator.addPaint(paint);
+        decorator.addPaint(paint);
+        decorator.paintRoom(room);
+        assert.strictEqual(50, room.areaPainted);
+    });
+
+    it("should not be able to paint a room if it does not have enough paint", function () {
+        const room = new Room(50);
+        const hasEnoughPaint = decorator.hasEnoughPaint(room);
+        decorator.paintRoom(room);
+        assert.strictEqual(room.painted, false);
+        assert.strictEqual(hasEnoughPaint, false);
     });
 
 })
